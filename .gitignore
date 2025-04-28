@@ -1,0 +1,41 @@
+# dependencies (bun install)
+node_modules
+
+.vscode
+DS_Store
+# Bun
+bun.lock
+
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env*
+
+# Mais garder .env.example
+!.env.example
+
+data/*.html
+data/*.txt
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
