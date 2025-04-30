@@ -2,13 +2,30 @@
 
 ## Instruction
 
-### 1- Install dependencies
+## 1- Download and install nodejs via nvm:
+
+```bash
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+# Download and install Node.js:
+nvm install 22
+```
+
+## 2- Install BunJs
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+### 3- Install dependencies on root projet
 
 ```bash
 bun install
 ```
 
-### 2- Rename .env.example to .env
+### 4- Rename .env.example to .env
 
 ### 3- Start Sending
 
@@ -21,4 +38,4 @@ bun run send
 ## Send via socks5
 
 ssh -N -D 1080 user@IP_VPS
-SMTP_SPROX=socks://localhost:1080
+SMTP_PROXY=socks://localhost:1080

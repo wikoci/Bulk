@@ -17,12 +17,12 @@ async function scheduleNow() {
 
   let waitIndexArray = lists.slice(0, rotate);
   let sendIndex: number = 1;
+  let HTML_CONTENT = await getMailContent();
 
   consola.log("🔄 Sending, please wait ...\n");
   for await (let index of waitIndexArray) {
     try {
       let mailist = takeAndRemove(lists, CC_LIMIT);
-      let HTML_CONTENT = await getMailContent();
       let use_ai = process.env.USE_AI === "true";
       // console.info("USE AI :", use_ai);
       if (use_ai) {

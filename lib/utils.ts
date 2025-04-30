@@ -2,10 +2,20 @@ import path from "path";
 import fs from "fs-extra";
 import { consola } from "consola";
 import { Settings } from "../core/config";
+import { v4 } from "uuid";
 
 function isEmail(str: string) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(str);
+}
+
+function replaceAllWithUuid(str: string, search: string) {
+  // Échappe les caractères spéciaux de la sous-chaîne
+  const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(escaped, "g");
+
+  // La fonction de remplacement génère un UUID différent à chaque appel
+  return str.replace(regex, () => v4());
 }
 
 function getMailContent() {
@@ -14,7 +24,9 @@ function getMailContent() {
     "data",
     String(process?.env.LETTER_FILE)
   );
-  const letterContent = fs.readFileSync(LETTER_PATH, "utf-8");
+  let letterContent = fs.readFileSync(LETTER_PATH, "utf-8");
+
+  letterContent = replaceAllWithUuid(letterContent, "_uuid_");
   return letterContent;
 }
 
