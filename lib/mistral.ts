@@ -56,7 +56,7 @@ async function MistralAgentLetter(): Promise<any> {
       console.log(c);
       c = extractHtmlContent(c);
       clearTimeout(timeout);
-      consola.success("> auto-letter generated OK ✅");
+      // consola.success("> auto-letter generated OK ✅");
       return resolve(c);
     } catch (err: any) {
       consola.error(err?.message);
