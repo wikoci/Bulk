@@ -25,7 +25,9 @@ curl -fsSL https://bun.sh/install | bash
 bun install
 ```
 
-### 4- Rename .env.example to .env
+### 4- Variable env
+
+Rename .env.example to .env
 
 ### 5- Start Sending
 
