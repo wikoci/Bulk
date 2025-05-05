@@ -21,10 +21,18 @@ _.log
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # dotenv environment variable files
-.env*
+
+
 
 # Mais garder .env.example
-!.env.example
+
+.env.local
+.env.production
+.env.development
+.env.test
+.env.test.local
+.env.test.production
+.env.prod
 
 data/*.html
 data/*.txt
