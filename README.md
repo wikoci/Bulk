@@ -27,10 +27,16 @@ bun install
 
 ### 4- Rename .env.example to .env
 
-### 3- Start Sending
+### 5- Start Sending
 
 ```bash
 bun run send
+```
+
+### 6- Update all
+
+```bash
+git pull
 ```
 
 # Bonus
