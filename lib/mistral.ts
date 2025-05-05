@@ -53,7 +53,7 @@ async function MistralAgentLetter(): Promise<any> {
         }
       );
       let c = chatResponse?.choices[0]?.message?.content || "";
-      console.log(c);
+      // console.log(c);
       c = extractHtmlContent(c);
       clearTimeout(timeout);
       // consola.success("> auto-letter generated OK ✅");
